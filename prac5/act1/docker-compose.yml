@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+  myredis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - my-net
+
+  myphp:
+    build: ./php
+    restart: always
+    ports:
+      - "8080:80"
+    volumes: 
+      - ./web:/var/www/html
+    depends_on:
+      - myredis
+    networks:
+      - my-net
+networks:
+  my-net:
+    driver: bridge
