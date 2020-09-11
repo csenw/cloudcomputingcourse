@@ -1,0 +1,5 @@
+MapReduce is good
+Spark is fast
+Spark is better than MapReduce
+Hadoop has HDFS and MapReduce
+Spark has SQL, ML, Streaming, and Graph
