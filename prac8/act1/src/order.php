@@ -2,7 +2,8 @@
 echo "I am order.php!";
 echo "<br>";
 $redis = new Redis();
-$redis->connect('myredis', 6379);
+$redis->connect('myredis-master', 6379);
+$redis->auth('my_master_password');
 echo "Connection to Redis server sucessfully!"; 
 echo "<br>";
 echo "Server is running: " . $redis->ping();
